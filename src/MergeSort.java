@@ -1,5 +1,12 @@
 public class MergeSort {
-
+    /**
+     * function to merge array after splitting array into sub arrays
+     * @param left left half of the array
+     * @param right half of the array
+     * @param arr array to be sorted
+     * @param lSize variable to track sub array size
+     * @param rSize variable to track sub array size
+     */
     public static void merge(double[] left, double[] right, double arr[], int lSize, int rSize) {
         int i = 0, l = 0, r = 0;
         while(l < lSize && r < rSize) {
@@ -17,7 +24,12 @@ public class MergeSort {
             arr[i++] = right[r++];
         }
     }
-
+    /**
+     * sorts array with merge sort method
+     * @param arr the array to be sorted
+     * @param variable that tracks array length
+     * @return the sorted array
+     */
     public static double[] sort(double[] arr, int length) {
         if (length > 1) {
             int middle = length/2;
@@ -41,59 +53,4 @@ public class MergeSort {
         }
         return arr;
     }
-
-
-
-
-/*   public static void merge(float[] left, float[] right, float[] arr) {
-        int l = 0, r = 0, i = 0;
-        while (l < left.length && r < right.length) {
-            if (left[l] < right[r]) {
-                arr[i++] = left[l++];
-            }
-            else {
-                arr[i++] = right[r++];
-                r++;
-            }
-        }
-        while (l<left.length) {
-            arr[i++] = left[l++];
-        }
-        while(r<right.length) {
-            arr[i++] = right[r++];
-        }
-    }
-
-    public static float [] get_left(float[] arr) {
-        int size = arr.length/2;
-        float[] left = new float[size];
-        for (int i = 0; i < size; i++) {
-            left [i] = arr[i];
-        }
-        return left;
-    }
-
-    public static float [] get_right(float[] arr) {
-        int size = arr.length/2;
-        float[] right = new float[size];
-        for (int i = 0; i < size; i++) {
-            right [i] = arr[i+size];
-        }
-        return right;
-    }
-
-    public static float [] mergeSort(float[] arr) {
-        if (arr.length>1) {
-            float[] left = get_left(arr);
-            float[] right = get_right(arr);
-            mergeSort(left);
-            mergeSort(right);
-            merge(arr, left, right);
-        }
-        return arr;
-
-    }*/
-
-
-
 }

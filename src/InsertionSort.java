@@ -1,4 +1,10 @@
 public class InsertionSort {
+
+    /**
+     * sorts array with insertion sort method
+     * @param arr the array to be sorted
+     * @return the sorted array
+     */
     public static double[] sort(double[] arr) {
         for (int i = 1; i < arr.length; i++) {
             double temp = arr[i];
