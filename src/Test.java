@@ -20,11 +20,12 @@ public class Test {
         double[] results = new double[10];
 
         //small array I used to test accuracy of each sorting method
-        double[] test = {5, 9, 3, 4, 0, 3, 5, 88, 0, 1, 3, 5, 9, 32, 4, 0, 33, 4, 6, 9, 2, 3, 585};
-        QuickSort.sort(test, 0, test.length-1);
+        double[] test = new double[]{106, 5, 9, 3, 4, 0, 3, 5, 88, 0, 1, 3, 5, 9, 32, 4, 0, 1992, 3, 6, 0, 35, 1, 495, 39, 4, 22};
+        HybridSort.hybridsort(0, test.length - 1, test);
         for (int i = 0; i < test.length; i++) {
             System.out.print(test[i] + "\n");
         }
+
         //loop to sort each array with each type of sorting method
         //time to sort is stored in results array
         //comment out which arrays are not being currently tested
