@@ -1,0 +1,26 @@
+Runtime analysis:
+
+Bubble sort: worst case is O(n^2). In the case that an array is sorted in reverse order (10, 9, 8, etc...) it would have to compare every n to every other n in the array which results in O(n^2).
+
+Selection sort: worst case is O(n^2). Every element in the array must be checked to be sorted, and for every element sorted the minimum remaining element in the unsorted part of the array has to be checked, which results in O(n^2).
+
+Insertion sort: worst case is O(n^2). every element that needs to be sorted causes the rest of the sorted part of the array to move, which results in O(n^2).
+
+Quadratic sort: this is a renamed version of insertion sort that I made to implement in the hybrid sort, so worst case is O(n^2) for the reason listed on insertion sort.
+
+Merge sort: worst case is O(nlogn). The array is dividing by half on each function call which results in log n, and merging the arrays together is n/2 simplified to n, which results in O(nlogn) 
+
+Quick sort: the worst case is O(n^2) but is astronomically unlikely to occur. This is because for the worst case quick sort has to pick either the largest or smallest element in the array as the pivot every single time for the entire array. Average time for quick sort is O(nlogn).
+
+Random quick sort: same as the quick sort explanation above, a random pivot doesn't change the worst case runtime because it could also randomly continue to select the largest or smallest element as the pivot. The average runtime is likely to be better for sorted arrays because it's less likely to keep selecting the smallest element in the array compared to a quick sort that always selects the first element as pivot.
+
+Hybrid sort: Hybrid sort worst case is O(n^2). Since I coded it to call QuadraticSort whenever the length of the array < 15, any array with starting length < 15 will be sorted with insertion sort which is O(n^2) worst case run time. Longer arrays still have a worst case of O(n^2) runtime because the pivot could randomly keep selecting the smallest or largest element, although it is much less likely for the worst case to occur than if selection sort were called on an array.
+
+Space analysis:
+Quadratic sorts (bubble, insertion, selection, quadratic): these all use O(1) or constant space. Since variables declared in a loop are counted as 1, all space requirements are constant and rounded to O(1).
+
+Merge sort, quick sort, hybrid sort: since these are all recursive functions, they have O(logn) space requirements.
+
+Justification:
+The reason I chose to implement a version of insertion sort into the hybrid sort is because my data from part 1 showed that it averaged a faster sort rate than the other quadratic sorts, bubble sort and selection sort. Since the goal was to speed up the algorithim, implementing it with quick sort made the most sense to me. I arrived at the length < 15 number by testing a range of numbers. Anything between 10-20 length to swap to insertion sort yielded similar results, so I split the difference in the middle and chose 15.
+
